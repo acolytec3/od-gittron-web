@@ -43,7 +43,11 @@ class SupportButton extends Component {
   };
 
   getBaseTokenPrice = async (tokenId) => {
-    return await this.GittronWeb3Service.baseTokenPrice(tokenId);
+    try {
+      return await this.GittronWeb3Service.baseTokenPrice(tokenId);
+    } catch (res) {
+      return '0';
+    }
   };
 
   handleSubmit = async (bot) => {
