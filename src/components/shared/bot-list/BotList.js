@@ -17,7 +17,7 @@ class BotList extends Component {
               <Link to={`bots/${bot.tokenId}`} key={bot.tokenId}>
                 <BotCard bot={bot} />
               </Link>
-              {bot.tokenType === 'prime' && (
+              {bot.tokenType === 'prime' && context.active && (
                 <SupportButton bot={bot} account={context.account} />
               )}
             </Fragment>
